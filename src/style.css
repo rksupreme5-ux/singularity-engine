@@ -1,0 +1,83 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background-color: #000000;
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+  user-select: none;
+}
+
+canvas { display: block; width: 100vw; height: 100vh; }
+
+#ui-panel {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: rgba(15, 15, 20, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  color: white;
+  z-index: 100;
+  width: 340px;
+}
+
+#ui-panel h1 { margin: 0 0 6px 0; font-size: 1.1rem; font-weight: 700; letter-spacing: 2px; }
+#ui-panel p { margin: 0 0 24px 0; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 1px; }
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Force the light button to span both columns */
+#btn-light {
+  grid-column: span 2;
+}
+
+button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 12px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+button.active {
+  background: rgba(255, 120, 0, 0.15);
+  border-color: rgb(255, 140, 0);
+  box-shadow: 0 0 20px rgba(255, 120, 0, 0.4);
+  color: #ffddaa;
+}
+
+button.active-blue {
+  background: rgba(0, 150, 255, 0.15);
+  border-color: rgb(0, 180, 255);
+  box-shadow: 0 0 20px rgba(0, 150, 255, 0.4);
+  color: #cceeff;
+}
+
+button.active-light {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgb(255, 255, 255);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+  color: #ffffff;
+  font-weight: 800;
+}
